@@ -4,15 +4,12 @@ function solveEquation(a, b, c) {
 	let arr = [];
 	const discriminant = b ** 2 - 4 * a * c;
 	let d = discriminant;
-	if (d < 0) {
-		return arr;
-	} else if (d === 0) {
+	if (d === 0) {
 		arr = [-b / (2 * a)];
-		return arr;
-	} else {
+	} else if (d > 0) {
 		arr = [(-b + Math.sqrt(d)) / (2 * a), (-b - Math.sqrt(d)) / (2 * a)];
-		return arr;
 	}
+	return arr;
 };
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
