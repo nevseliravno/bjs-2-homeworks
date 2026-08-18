@@ -95,3 +95,42 @@ class Library {
 	}
 }
 
+const library = new Library("Библиотека Маяковского");
+library.addBook(
+ new DetectiveBook(
+   "Артур Конан Дойл",
+   "Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе",
+   2019,
+   1008
+ )
+);
+
+library.addBook(
+ new FantasticBook(
+   "Аркадий и Борис Стругацкие",
+   "Пикник на обочине",
+   1972,
+   168
+ )
+);
+
+library.addBook(
+ new Book(
+   "Семенов Д.А.",
+   "Книга рецептов",
+   1919,
+   222
+ )
+);
+
+
+let timeMashine = new NovelBook("Герберт Уэллс", "Машина времени", 1895, 138)
+library.addBook(timeMashine);
+library.addBook(new Magazine("Мурзилка", 1924, 60));
+
+library.findBookBy("releaseDate", 1919).name;
+
+library.giveBookByName("Машина времени");
+timeMashine.state = 70;
+timeMashine.fix();
+library.addBook(timeMashine);
