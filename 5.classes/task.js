@@ -63,7 +63,7 @@ class DetectiveBook extends Book {
 }
 
 class Library {
-	constructor(name, books) {
+	constructor(name) {
 		this.name = name;
 		this.books = [];
 	}
@@ -74,15 +74,14 @@ class Library {
 		}
 	}
 
-	findBookBy(type, value) {
-		for (let i = 0; i < this.books.length; i++) {
-			let book = this.books[i];
-			if (book[type] === value) {
-				return book;
-			}
-		}
-		return null;
-	}
+    findBookBy(type, value){
+        for (let book of this.books){
+            if(book[type] === value){
+                return book;
+            } 
+        }
+        return null;
+    }
 
 	giveBookByName(bookName) {
 		for (let i = 0; i < this.books.length; i++) {
@@ -95,3 +94,4 @@ class Library {
 		return null;
 	}
 }
+
